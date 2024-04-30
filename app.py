@@ -15,7 +15,7 @@ from langchain_google_genai import GoogleGenerativeAI
 def main():
     load_dotenv()
     google_api_key=os.environ.get("GOOGLE_API_KEY")
-    st.set_page_config(page_title="Ask your PDF")
+    st.set_page_config(page_title="Ask your PDF",page_icon=":books:")
     st.header("Ask your PDF")
     
     #uploading the file
@@ -53,9 +53,6 @@ def main():
             #response
             response=chain.run(input_documents=docs,question=user_ques)
             st.write(response)
-
-
-
 
 
 if __name__=='__main__':
